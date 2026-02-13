@@ -197,10 +197,7 @@
         const correctPassword = "15032025";
         let attemptCount = 0;
 
-        window.onload = function() {
-            if (localStorage.getItem('gulsahAccess') === 'true') {
-                window.location.href = 'home.html';
-            }
+       
             
             document.getElementById('passwordInput').addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') checkPassword();
@@ -213,7 +210,6 @@
             const password = input.value.trim();
 
             if (password === correctPassword) {
-    localStorage.setItem('gulsahAccess', 'true');
     document.querySelector('.login-container').style.animation = 'slideUp 0.5s ease-out reverse';
     
     // URL'den redirect parametresini al
