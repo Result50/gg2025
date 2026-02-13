@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gülşah İçin 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 30px;
+            opacity: 0.3;
+            animation: floatHeart 15s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            animation: slideUp 0.8s ease-out;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-header {
+            margin-bottom: 40px;
+        }
+
+        .login-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .login-subtitle {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .login-question {
+            font-size: 1.2em;
+            color: #764ba2;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 18px 25px;
+            font-size: 1.2em;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            font-family: 'Lora', serif;
+            text-align: center;
+            transition: all 0.3s ease;
+            letter-spacing: 3px;
+        }
+
+        .password-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Lora', serif;
+            margin-top: 20px;
+        }
+
+        .login-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 1em;
+            margin-top: 20px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .hint {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 15px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart" style="left: 10%; animation-delay: 0s;">💕</div>
+    <div class="heart" style="left: 25%; animation-delay: 3s;">❤️</div>
+    <div class="heart" style="left: 40%; animation-delay: 6s;">💖</div>
+    <div class="heart" style="left: 55%; animation-delay: 9s;">💗</div>
+    <div class="heart" style="left: 70%; animation-delay: 12s;">💝</div>
+    <div class="heart" style="left: 85%; animation-delay: 15s;">💓</div>
+
+    <div class="login-container">
+        <div class="login-header">
+            <h1 class="login-title">💕 Gülşah İçin 💕</h1>
+            <p class="login-subtitle">Özel Mektuplar Seni Bekliyor...</p>
+        </div>
+
+        <div class="login-question">
+            İlişkimizin başladığı günü hatırlıyor musun? ❤️
+        </div>
+
+        <input 
+            type="text" 
+            id="passwordInput" 
+            class="password-input" 
+            placeholder="GGAAYYYY" 
+            maxlength="8"
+        >
+
+        <button class="login-button" onclick="checkPassword()">
+            Giriş Yap ✨
+        </button>
+
+        <div id="errorMessage" class="error-message"></div>
+        <div class="hint">İpucu: 8 haneli tarih</div>
+    </div>
+
+    <script>
+        const correctPassword = "15032025";
+        let attemptCount = 0;
+
+        window.onload = function() {
+            if (localStorage.getItem('gulsahAccess') === 'true') {
+                window.location.href = 'index.html';
+            }
+            
+            document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') checkPassword();
+            });
+        };
+
+        function checkPassword() {
+            const input = document.getElementById('passwordInput');
+            const errorDiv = document.getElementById('errorMessage');
+            const password = input.value.trim();
+
+            if (password === correctPassword) {
+                localStorage.setItem('gulsahAccess', 'true');
+                document.querySelector('.login-container').style.animation = 'slideUp 0.5s ease-out reverse';
+                setTimeout(() => window.location.href = 'index.html', 500);
+            } else {
+                attemptCount++;
+                input.value = '';
+                input.style.borderColor = '#e74c3c';
+                
+                if (attemptCount === 1) {
+                    errorDiv.textContent = 'Hmm, o tarih değil... Tekrar dene! ❤️';
+                } else {
+                    errorDiv.textContent = '⚠️ Bir kere daha yanlış bilirsen bana bildirim gelecek! 😊';
+                    errorDiv.style.color = '#ff9800';
+                }
+                
+                errorDiv.style.display = 'block';
+                setTimeout(() => input.style.borderColor = '#e0e0e0', 2000);
+            }
+        }
+    </script>
+</body>
+</html>
