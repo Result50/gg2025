@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yalnız Hissettiğinde</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="letter-container">
+        <div class="letter-header">
+            <h1>Yalnız Hissettiğinde Aç 🌙</h1>
+            <p class="letter-date">Senin için yazıldı</p>
+        </div>
+
+        <div class="letter-content">
+            <!-- Fotoğraf Alanı -->
+            <div class="letter-image">
+                <img src="https://images.unsplash.com/photo-1475113548554-5a36f1f523d6?w=800" alt="Yıldızlar" style="width: 100%; border-radius: 10px; margin-bottom: 30px;">
+                <!-- Kendi fotoğrafını kullanmak için: images/yalniz.jpg -->
+            </div>
+            
+            <p>En değerlim,</p>
+            
+            <p>Beni duyuyor musun? Şu an orada, seninle konuşuyorum. Belki fiziksel olarak yanında değilim, ama ruhum, kalbim, her zerrem seninle.</p>
+            
+            <p>Yalnızlık bazen içimizi kemiriyor, biliyorum. Etrafımızda insanlar olsa bile, içimizde bir boşluk hissedebiliyoruz. Ama sana söylemek istiyorum: SEN ASLA YALNIZ DEĞİLSİN!</p>
+            
+            <p>Ben buradayım. Her zaman buradayım. Gece yarısı bile olsa, dünyanın öbür ucunda bile olsam, sen beni her zaman yanında hissedebilirsin. Çünkü benim kalbim senin kalbinle bağlı. Biz bir bütünüz.</p>
+            
+            <p>Gözlerini kapat ve hayal et: Yanındayım. Elini tutuyorum. Başını omzuma yaslamışsın. Saçlarını okşuyorum ve şunu fısıldıyorum: "Sen benim her şeyimsin ve asla seni yalnız bırakmayacağım."</p>
+            
+            <p>Zor günlerde, mutlu günlerde, sıradan günlerde - her zaman yanındayım. Mesafe bizi fiziksel olarak ayırabilir, ama gönüllerimiz her zaman bir arada.</p>
+            
+            <p>Unutma, sen seviliyor, değer veriliyor ve önemseniyorsun. Benim için dünyanın en özel insanısın.</p>
+            
+            <p class="signature">Her an seninle olan, <br>Senin aşkın 💫</p>
+        </div>
+
+        <center>
+            <a href="index.html" class="back-button"><span>← Ana Sayfaya Dön</span></a>
+        </center>
+    </div>
+
+    <!-- Yalnız Temalı Animasyonlar -->
+    <script>
+        // Gece gökyüzü emojileri
+        const emojis = ['⭐', '✨', '🌟', '💫', '🌙', '🌛', '🌜', '🌠', '☄️'];
+        for(let i = 0; i < 35; i++) {
+            const emoji = document.createElement('div');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.position = 'fixed';
+            emoji.style.left = Math.random() * 100 + '%';
+            emoji.style.top = Math.random() * 100 + '%';
+            emoji.style.fontSize = (Math.random() * 25 + 15) + 'px';
+            emoji.style.opacity = Math.random() * 0.5 + 0.3;
+            emoji.style.animation = `twinkle ${Math.random() * 3 + 2}s ease-in-out infinite`;
+            emoji.style.animationDelay = Math.random() * 5 + 's';
+            emoji.style.pointerEvents = 'none';
+            emoji.style.zIndex = '0';
+            document.body.appendChild(emoji);
+        }
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes twinkle {
+                0%, 100% {
+                    opacity: 0.3;
+                    transform: scale(0.8);
+                }
+                50% {
+                    opacity: 1;
+                    transform: scale(1.2);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

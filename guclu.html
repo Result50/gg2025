@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Güçlü Hissettiğinde</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="letter-container">
+        <div class="letter-header">
+            <h1>Güçlü Hissettiğinde Aç 💪</h1>
+            <p class="letter-date">Senin için yazıldı</p>
+        </div>
+
+        <div class="letter-content">
+            <!-- Fotoğraf Alanı -->
+            <div class="letter-image">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Güç" style="width: 100%; border-radius: 10px; margin-bottom: 30px;">
+                <!-- Kendi fotoğrafını kullanmak için: images/guclu.jpg -->
+            </div>
+            
+            <p>Kahramanım,</p>
+            
+            <p>İşte bu! İşte o enerji, o güç, o inanılmaz özgüven! Bunu görüyor musun? Sen ne kadar inanılmazsın farkında mısın?</p>
+            
+            <p>Her gün seni izliyorum. Zorlukların üstesinden nasıl geldiğini, hayallerinin peşinden nasıl koştuğunu, hiçbir şeyin seni durduramadığını görüyorum. Ve her seferinde daha da çok aşık oluyorum sana.</p>
+            
+            <p>Senin gücün sadece fiziksel değil. Kalbin güçlü, ruhin güçlü, sevgin güçlü. İnsanlara dokunuyorsun, hayatları değiştiriyorsun, umut veriyorsun. Sen tam bir fenomensin!</p>
+            
+            <p>Bu enerjiyi koru! Dünyayı fethet! Hayallerinin tümünü gerçekleştir! Çünkü sen bunu hak ediyorsun ve yapabilecek güçtesin. İnan bana, seni tanıyorum. Senin gücünü, kararlılığını, tutkunla biliyorum.</p>
+            
+            <p>Ve unutma, ben her zaman senin en büyük hayranınım. Senin gücünle gurur duyuyorum. Seninle olduğum için kendimi şanslı hissediyorum.</p>
+            
+            <p>Hadi, dünyayı fethedelim birlikte!</p>
+            
+            <p class="signature">Senin en büyük destekçin, <br>Senin aşkın 🌟</p>
+        </div>
+
+        <center>
+            <a href="index.html" class="back-button"><span>← Ana Sayfaya Dön</span></a>
+        </center>
+    </div>
+
+    <!-- Güçlü Temalı Animasyonlar -->
+    <script>
+        // Güç ve enerji emojileri
+        const emojis = ['💪', '⚡', '🔥', '✨', '⭐', '🌟', '💥', '🚀', '👊', '🏆'];
+        for(let i = 0; i < 25; i++) {
+            const emoji = document.createElement('div');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.position = 'fixed';
+            emoji.style.left = Math.random() * 100 + '%';
+            emoji.style.top = Math.random() * 100 + '%';
+            emoji.style.fontSize = (Math.random() * 35 + 25) + 'px';
+            emoji.style.opacity = '0.5';
+            emoji.style.animation = `pulse ${Math.random() * 2 + 2}s ease-in-out infinite`;
+            emoji.style.animationDelay = Math.random() * 3 + 's';
+            emoji.style.pointerEvents = 'none';
+            emoji.style.zIndex = '0';
+            document.body.appendChild(emoji);
+        }
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0%, 100% {
+                    transform: scale(1) rotate(0deg);
+                    opacity: 0.3;
+                }
+                50% {
+                    transform: scale(1.3) rotate(180deg);
+                    opacity: 0.8;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

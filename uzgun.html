@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üzgün Olduğunda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="letter-container">
+        <div class="letter-header">
+            <h1>Üzgün Olduğunda Aç 📝</h1>
+            <p class="letter-date">Senin için yazıldı</p>
+        </div>
+
+        <div class="letter-content">
+            <!-- Fotoğraf Alanı -->
+            <div class="letter-image">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800" alt="Gün batımı" style="width: 100%; border-radius: 10px; margin-bottom: 30px;">
+                <!-- Kendi fotoğrafını kullanmak için: images/uzgun.jpg -->
+            </div>
+            
+            <p>Canım benim,</p>
+            
+            <p>Biliyorum, bazen hayat bizi yoruyor. Bazen her şey üst üste geliyor gibi hissediyoruz ve gözyaşlarımızı tutamıyoruz. Ama sana bir şey söylemek istiyorum: Ağlamak zayıflık değil, güçtür. Duygularını yaşamak, onları hissetmek seni daha da güçlü yapıyor.</p>
+            
+            <p>Bu satırları okuyorsan, bil ki ben senin yanındayım. Belki fiziksel olarak yanında olamıyorum şu an, ama kalbim her zaman seninle. Senin üzüntün benim üzüntüm, senin gözyaşların benim gözyaşlarım.</p>
+            
+            <p>Unutma ki, en karanlık gecelerden sonra en güzel şafaklar doğar. Sen çok güçlüsün, sadece bazen unutuyorsun. Bu üzüntü de geçecek, söz veriyorum. Ve ben her zaman burada olacağım, senin için.</p>
+            
+            <p>Seni çok seviyorum. Gülümsemen için her şeyi yaparım. Lütfen unutma, sen benim her şeyimsin ve her zaman yanındayım.</p>
+            
+            <p class="signature">Seni seven, <br>Senin aşkın ❤️</p>
+        </div>
+
+        <center>
+            <a href="index.html" class="back-button"><span>← Ana Sayfaya Dön</span></a>
+        </center>
+    </div>
+
+    <!-- Üzgün Temalı Animasyonlar -->
+    <script>
+        // Yağmur damlaları ve gözyaşları
+        const emojis = ['💧', '💦', '😢', '😭', '🌧️'];
+        for(let i = 0; i < 20; i++) {
+            const emoji = document.createElement('div');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.position = 'fixed';
+            emoji.style.left = Math.random() * 100 + '%';
+            emoji.style.top = '-50px';
+            emoji.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            emoji.style.opacity = '0.6';
+            emoji.style.animation = `fall ${Math.random() * 3 + 4}s linear infinite`;
+            emoji.style.animationDelay = Math.random() * 5 + 's';
+            emoji.style.pointerEvents = 'none';
+            emoji.style.zIndex = '0';
+            document.body.appendChild(emoji);
+        }
+        
+        // Animasyon tanımı
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

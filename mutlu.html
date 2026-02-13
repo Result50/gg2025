@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutlu Olduğunda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="letter-container">
+        <div class="letter-header">
+            <h1>Mutlu Olduğunda Aç 💕</h1>
+            <p class="letter-date">Senin için yazıldı</p>
+        </div>
+
+        <div class="letter-content">
+            <!-- Fotoğraf Alanı -->
+            <div class="letter-image">
+                <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800" alt="Mutluluk" style="width: 100%; border-radius: 10px; margin-bottom: 30px;">
+                <!-- Kendi fotoğrafını kullanmak için: images/mutlu.jpg -->
+            </div>
+            
+            <p>Tatlım,</p>
+            
+            <p>Bu satırları mutlu bir anında okuyorsan, kalbim sevinçle doldu şu an. Senin mutluluğun benim dünyadaki en büyük mutluluğum çünkü. Gülümsemen güneşimi aydınlatıyor, kahkahan müziğim oluyor.</p>
+            
+            <p>Biliyor musun? Senin gözlerindeki o parıltıyı gördüğümde, dünyanın en şanslı insanı olduğumu hissediyorum. Çünkü o gülümsemenin bir parçası olmak, hayatımın en büyük armağanı.</p>
+            
+            <p>Bu mutluluğunu kutla! Dans et, gül, eğlen! Ve bil ki bu mutluluğu hak ediyorsun. Çünkü sen harika bir insansın. Senin varlığın bile etrafındaki herkesi mutlu ediyor.</p>
+            
+            <p>Bu anı yaşa, tadını çıkar. Ve unutma, ben her zaman senin mutluluğuna ortak olmak istiyorum. Mutlu anlarında da, zor günlerinde de yanındayım.</p>
+            
+            <p>Gülmeye devam et aşkım, çünkü senin gülüşün dünyayı daha güzel bir yer yapıyor.</p>
+            
+            <p class="signature">Hep seninle gülmek isteyen, <br>Senin aşkın 💕</p>
+        </div>
+
+        <center>
+            <a href="index.html" class="back-button"><span>← Ana Sayfaya Dön</span></a>
+        </center>
+    </div>
+
+    <!-- Mutlu Temalı Animasyonlar -->
+    <script>
+        // Kalpler, yıldızlar ve gülümsemeler
+        const emojis = ['❤️', '💕', '💖', '💗', '⭐', '✨', '😊', '😍', '🎉', '🌟'];
+        for(let i = 0; i < 25; i++) {
+            const emoji = document.createElement('div');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.position = 'fixed';
+            emoji.style.left = Math.random() * 100 + '%';
+            emoji.style.top = Math.random() * 100 + '%';
+            emoji.style.fontSize = (Math.random() * 25 + 20) + 'px';
+            emoji.style.opacity = '0.5';
+            emoji.style.animation = `floatHappy ${Math.random() * 5 + 8}s ease-in-out infinite`;
+            emoji.style.animationDelay = Math.random() * 5 + 's';
+            emoji.style.pointerEvents = 'none';
+            emoji.style.zIndex = '0';
+            document.body.appendChild(emoji);
+        }
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatHappy {
+                0%, 100% {
+                    transform: translateY(0) rotate(0deg) scale(1);
+                }
+                25% {
+                    transform: translateY(-30px) rotate(5deg) scale(1.1);
+                }
+                50% {
+                    transform: translateY(-50px) rotate(-5deg) scale(0.9);
+                }
+                75% {
+                    transform: translateY(-30px) rotate(3deg) scale(1.05);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

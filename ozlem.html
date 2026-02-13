@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özlem Duyduğunda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="letter-container">
+        <div class="letter-header">
+            <h1>Özlem Duyduğunda Aç 😢</h1>
+            <p class="letter-date">Senin için yazıldı</p>
+        </div>
+
+        <div class="letter-content">
+            <!-- Fotoğraf Alanı -->
+            <div class="letter-image">
+                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800" alt="Özlem" style="width: 100%; border-radius: 10px; margin-bottom: 30px;">
+                <!-- Kendi fotoğrafını kullanmak için: images/ozlem.jpg -->
+            </div>
+            
+            <p>Aşkım,</p>
+            
+            <p>Biliyorum, mesafe bazen acı veriyor. Kucaklaşamıyoruz, sarılamıyoruz. Ellerimi tutamıyorum, saçlarını okşayamıyorum. Ve bu özlem, içimi yakıyor benim de.</p>
+            
+            <p>Ama biliyor musun ne düşünüyorum? Özlem, aslında aşkın kanıtı. Eğer sana özlem duymuyorsam, seni gerçekten sevmiyor olurdum. Bu özlem, kalbimin senin için nasıl çarptığının göstergesi.</p>
+            
+            <p>Gözlerini kapat ve hayal et: Şu an yanındayım. Saçlarını okşuyorum, alnından öpüyorum. Kollarım seni sımsıkı sarıyor. Kulağına fısıldıyorum: "Seni çok seviyorum, canım benim."</p>
+            
+            <p>Fiziksel olarak aramızda kilometre olabilir, ama kalplerimiz aynı ritimde atıyor. Her saniye seni düşünüyorum, her nefeste senin kokunu arıyorum. Sen benim hayatımsın, nefesimsin, her şeyimsin.</p>
+            
+            <p>Çok yakında tekrar kavuşacağız. Ve o an, dünyanın en güzel anı olacak. Seni öyle çok öpeceğim ki, özlemin yerini mutluluk alacak.</p>
+            
+            <p>Seni sonsuza kadar seviyorum.</p>
+            
+            <p class="signature">Her an seni düşünen, <br>Senin aşkın 💝</p>
+        </div>
+
+        <center>
+            <a href="index.html" class="back-button"><span>← Ana Sayfaya Dön</span></a>
+        </center>
+    </div>
+
+    <!-- Özlem Temalı Animasyonlar -->
+    <script>
+        // Kalpler ve öpücükler
+        const emojis = ['💕', '💖', '💗', '💝', '💓', '💞', '😘', '💋', '❤️‍🔥', '💑'];
+        for(let i = 0; i < 30; i++) {
+            const emoji = document.createElement('div');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.position = 'fixed';
+            emoji.style.left = Math.random() * 100 + '%';
+            emoji.style.bottom = '-50px';
+            emoji.style.fontSize = (Math.random() * 30 + 25) + 'px';
+            emoji.style.opacity = '0.6';
+            emoji.style.animation = `rise ${Math.random() * 4 + 6}s ease-in-out infinite`;
+            emoji.style.animationDelay = Math.random() * 5 + 's';
+            emoji.style.pointerEvents = 'none';
+            emoji.style.zIndex = '0';
+            document.body.appendChild(emoji);
+        }
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rise {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 0;
+                }
+                20% {
+                    opacity: 0.8;
+                }
+                80% {
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

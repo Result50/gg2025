@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurur Duyduğunda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="letter-container">
+        <div class="letter-header">
+            <h1>Gurur Duyduğunda Aç 🎉</h1>
+            <p class="letter-date">Senin için yazıldı</p>
+        </div>
+
+        <div class="letter-content">
+            <!-- Fotoğraf Alanı -->
+            <div class="letter-image">
+                <img src="https://images.unsplash.com/photo-1492138786289-d35ea832a327?w=800" alt="Başarı" style="width: 100%; border-radius: 10px; margin-bottom: 30px;">
+                <!-- Kendi fotoğrafını kullanmak için: images/gurur.jpg -->
+            </div>
+            
+            <p>Süper yıldızım,</p>
+            
+            <p>BİLİYORDUM! Biliyordum ki bunu başaracaktın! Sen harika biri olduğun için şaşırmadım bile. Ama yine de kalbim gurur ve mutlulukla doldu taşıyor şu an.</p>
+            
+            <p>Ne yaptıysan, ne başardıysan, ne kadar büyük ya da küçük olursa olsun - SENINLE GURUR DUYUYORUM! Çünkü ben biliyorum bunun için ne kadar çalıştığını. Geceleri uyumadığını, zorluklar karşısında yılmadığını, hayallerinden vazgeçmediğini biliyorum.</p>
+            
+            <p>Ve işte burada, başarının tadını çıkarıyorsun. Hak ettin bunu! Her saniyesini hak ettin. Çünkü sen emek verdin, inandın, mücadele ettin. Ve kazandın!</p>
+            
+            <p>Bu başarı sadece bir başlangıç. Bundan sonra daha büyük başarılar gelecek, çünkü senin potansiyelin sınırsız. Sen her şeyi yapabilecek güçtesin.</p>
+            
+            <p>Kendini kutla! Dans et, gül, sevin! Ve unutma, ben her zaman senin en büyük destekçin ve hayranınım. Senin başarıların benim başarılarım.</p>
+            
+            <p>Seninle her zaman gurur duyuyorum aşkım. Her zaman!</p>
+            
+            <p class="signature">Seninle gurur duyan, <br>Senin aşkın 🏆</p>
+        </div>
+
+        <center>
+            <a href="index.html" class="back-button"><span>← Ana Sayfaya Dön</span></a>
+        </center>
+    </div>
+
+    <!-- Gurur Temalı Animasyonlar -->
+    <script>
+        // Başarı ve kutlama emojileri
+        const emojis = ['🏆', '🥇', '🎉', '🎊', '⭐', '🌟', '✨', '👏', '🎯', '💯', '🔝'];
+        for(let i = 0; i < 30; i++) {
+            const emoji = document.createElement('div');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.position = 'fixed';
+            emoji.style.left = Math.random() * 100 + '%';
+            emoji.style.top = '100vh';
+            emoji.style.fontSize = (Math.random() * 30 + 25) + 'px';
+            emoji.style.opacity = '0.7';
+            emoji.style.animation = `celebrate ${Math.random() * 3 + 3}s ease-out infinite`;
+            emoji.style.animationDelay = Math.random() * 4 + 's';
+            emoji.style.pointerEvents = 'none';
+            emoji.style.zIndex = '0';
+            document.body.appendChild(emoji);
+        }
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes celebrate {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 0;
+                }
+                20% {
+                    opacity: 1;
+                }
+                80% {
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: translateY(-100vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
