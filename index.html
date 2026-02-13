@@ -199,7 +199,7 @@
 
         window.onload = function() {
             if (localStorage.getItem('gulsahAccess') === 'true') {
-                window.location.href = 'index.html';
+                window.location.href = 'home.html';
             }
             
             document.getElementById('passwordInput').addEventListener('keypress', function(e) {
@@ -215,7 +215,7 @@
             if (password === correctPassword) {
                 localStorage.setItem('gulsahAccess', 'true');
                 document.querySelector('.login-container').style.animation = 'slideUp 0.5s ease-out reverse';
-                setTimeout(() => window.location.href = 'index.html', 500);
+                setTimeout(() => window.location.href = 'home.html', 500);
             } else {
                 attemptCount++;
                 input.value = '';
